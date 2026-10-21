@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diksan | Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Menghubungkan file CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300">
+
+    <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#home" class="text-2xl font-extrabold tracking-tight">
+                    Diksan<span class="text-blue-600 dark:text-blue-400">.</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tentang Saya</a>
+                    <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Keahlian</a>
+                    <a href="#portfolio" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Portofolio</a>
+                    <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Kontak</a>
+                </div>
+
+                <!-- Dark Mode Toggle & Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="p-2.5 rounded-full bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:scale-110 active:scale-95 transition-all" aria-label="Toggle Theme">
+                        <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+                    </button>
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Tentang Saya</a>
+            <a href="#skills" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Keahlian</a>
+            <a href="#portfolio" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Portofolio</a>
+            <a href="#contact" class="block py-2 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Kontak</a>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen pt-28 pb-16 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+            <div class="space-y-6 max-w-2xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 font-semibold text-xs tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                    Halo, Selamat Datang!
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Saya <span class="gradient-text">Diksan</span>
+                </h1>
+                <p class="text-xl font-medium text-slate-600 dark:text-slate-300">
+                    Full-Stack Web Developer & Creative Designer
+                </p>
+                <p class="text-slate-500 dark:text-slate-400 max-w-lg mx-auto leading-relaxed text-sm sm:text-base">
+                    Fokus membangun aplikasi web modern, cepat, dan mudah digunakan. Mengubah ide kompleks menjadi solusi digital yang intuitif dan berdampak.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-4 justify-center">
+                    <a href="#contact" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 flex items-center gap-2">
+                        <span>Hubungi Saya</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#portfolio" class="px-6 py-3 rounded-xl bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-all duration-300">
+                        Lihat Karya
+                    </a>
+                </div>
+                <div class="pt-4 flex items-center justify-center gap-5 text-slate-500 dark:text-slate-400">
+                    <a href="#" class="text-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="text-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="text-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-xl hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white/50 dark:bg-slate-800/40 border-y border-slate-200/60 dark:border-slate-800/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Tentang Diksan</h2>
+                <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Membangun Pengalaman Digital yang Bermakna</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Clean Code</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Menulis kode yang rapi, terstruktur, serta mudah dipelihara untuk efisiensi sistem jangka panjang.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Modern UI/UX</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Merancang antarmuka ramah pengguna dengan estetika modern yang menyesuaikan kebutuhan pengguna.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Performa Cepat</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Mengoptimalkan waktu muat halaman dan alur kerja agar aplikasi berjalan cepat dan mulus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Keahlian Utama</h2>
+                <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Teknologi & Tools yang Digunakan</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-brands fa-html5 text-3xl text-orange-500"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">HTML5 & CSS3</h4>
+                        <span class="text-xs text-slate-500">Lanjutan</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-brands fa-js text-3xl text-yellow-500"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">JavaScript</h4>
+                        <span class="text-xs text-slate-500">ES6+</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-brands fa-react text-3xl text-cyan-400"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">React.js</h4>
+                        <span class="text-xs text-slate-500">Frontend</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-brands fa-node-js text-3xl text-emerald-500"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">Node.js</h4>
+                        <span class="text-xs text-slate-500">Backend</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-solid fa-wind text-3xl text-sky-400"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">Tailwind CSS</h4>
+                        <span class="text-xs text-slate-500">Styling</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-solid fa-database text-3xl text-blue-500"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">MySQL / Mongo</h4>
+                        <span class="text-xs text-slate-500">Database</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-brands fa-git-alt text-3xl text-red-500"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">Git & GitHub</h4>
+                        <span class="text-xs text-slate-500">Version Control</span>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-3 hover:scale-105 transition">
+                    <i class="fa-brands fa-figma text-3xl text-purple-400"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">Figma</h4>
+                        <span class="text-xs text-slate-500">UI/UX Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-white/50 dark:bg-slate-800/40 border-y border-slate-200/60 dark:border-slate-800/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Proyek Terbaru</h2>
+                <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Karya Unggulan Diksan</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center items-center gap-2 mb-10 flex-wrap" id="filterContainer">
+                <button class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-blue-600 text-white shadow-sm" data-filter="all">Semua</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" data-filter="web">Web App</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" data-filter="design">UI/UX</button>
+            </div>
+
+            <!-- Portfolio Cards Container -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+                <!-- Project Item 1 -->
+                <div class="project-card group rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:shadow-xl transition duration-300" data-category="web">
+                    <div class="relative overflow-hidden h-48 bg-slate-100 dark:bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Dashboard Analytics" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/2563eb/ffffff?text=Web+App'">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold uppercase text-blue-600 dark:text-blue-400">Web App</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1 mb-2">Dashboard Analytics AI</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Aplikasi manajemen data berbasis AI untuk memantau performa bisnis secara real-time.</p>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
+                            <span class="text-xs font-medium text-slate-400">React • Tailwind • Node</span>
+                            <a href="#" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">Detail <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="project-card group rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:shadow-xl transition duration-300" data-category="design">
+                    <div class="relative overflow-hidden h-48 bg-slate-100 dark:bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80" alt="E-Commerce Mobile Design" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=UI/UX+Design'">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold uppercase text-purple-600 dark:text-purple-400">UI/UX Design</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1 mb-2">E-Commerce Mobile App</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Desain antarmuka aplikasi belanja online modern dengan pengalaman belanja pengguna yang intuitif.</p>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
+                            <span class="text-xs font-medium text-slate-400">Figma • Mobile UI</span>
+                            <a href="#" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">Detail <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="project-card group rounded-2xl bg-white dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 overflow-hidden shadow-sm hover:shadow-xl transition duration-300" data-category="web">
+                    <div class="relative overflow-hidden h-48 bg-slate-100 dark:bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="SaaS Product Landing Page" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/600x400/10b981/ffffff?text=Landing+Page'">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-semibold uppercase text-blue-600 dark:text-blue-400">Web App</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1 mb-2">SaaS Product Landing Page</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-4 line-clamp-2">Halaman pendaratan performa tinggi dengan rasio konversi optimal dan animasi halus.</p>
+                        <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700">
+                            <span class="text-xs font-medium text-slate-400">HTML5 • Tailwind • JS</span>
+                            <a href="#" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">Detail <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Kontak</h2>
+                <p class="text-3xl font-extrabold text-slate-900 dark:text-white">Mari Bekerja Sama!</p>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Punya ide menarik atau ingin berdiskusi? Jangan ragu untuk menghubungi saya.</p>
+            </div>
+
+            <div class="grid md:grid-cols-5 gap-8">
+                <!-- Info Left -->
+                <div class="md:col-span-2 space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Email</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">diksan@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Lokasi</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Indonesia</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Jam Kerja</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Senin - Jumat, Flexible</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Right -->
+                <div class="md:col-span-3">
+                    <form id="contactForm" class="space-y-4 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Nama Lengkap</label>
+                            <input type="text" required placeholder="Nama Anda" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-500 text-sm transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Email</label>
+                            <input type="email" required placeholder="email@domain.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-500 text-sm transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-slate-700 dark:text-slate-300">Pesan</label>
+                            <textarea rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 focus:outline-none focus:border-blue-500 text-sm transition resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition shadow-md shadow-blue-500/20">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                    <!-- Success Notification Container -->
+                    <div id="formStatus" class="hidden mt-4 p-4 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-300 text-xs font-medium text-center">
+                        Pesan Anda berhasil terkirim! Terima kasih telah menghubungi Diksan.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-slate-200/60 dark:border-slate-800/60 text-center text-xs text-slate-500 dark:text-slate-400">
+        <p>© <span id="currentYear"></span> Diksan. Dibuat dengan dedikasi dan passion.</p>
+    </footer>
+
+    <!-- Menghubungkan file JavaScript Eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
